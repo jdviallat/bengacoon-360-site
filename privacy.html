@@ -3,83 +3,118 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bengacoon 360 & Cocoon — Politique de confidentialité</title>
-<link rel="icon" href="assets/favicon.png">
+<title>Confidentialit&eacute; — Bengacoon 360 &amp; Cocoon</title>
+<link rel="icon" href="assets/icon.png">
 <style>
-  :root{--lavande:#6E5A8A;--lavande-fonce:#4E4066;--or:#A9832F;--or-clair:#C9A24B;--creme:#F6F2E9;--creme-2:#EFEAE0;--texte:#2A2A28;--muted:#6E6A60}
+  :root{
+    --teal:#2AA5BF; --teal-fonce:#1D7B90; --orange:#F39C12; --orange-clair:#F8C471;
+    --cloud:#F5F7FA; --cloud-2:#E8EDF3; --encre:#1A2233; --muted:#5D6B80;
+    --navy:#0B1326;
+  }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--texte);background:var(--creme);line-height:1.65}
-  a{color:var(--lavande)}
-  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
-  header{background:var(--lavande);color:#fff;padding:16px 0}
-  header .wrap{display:flex;align-items:center;gap:12px}
-  header img{width:34px;height:34px;border-radius:8px}
-  header .brand{font-weight:800}
-  header a{margin-left:auto;color:#E3D6F2;text-decoration:none;font-size:14px;font-weight:600}
-  main{padding:44px 0 60px}
-  h1{font-size:30px;font-weight:800;margin-bottom:6px;color:var(--lavande)}
-  .maj{color:var(--muted);font-size:13px;margin-bottom:26px}
-  h2{font-size:19px;font-weight:800;margin:28px 0 8px;color:var(--lavande)}
-  p,li{font-size:15px;color:#37352f;margin-bottom:8px}
-  ul{padding-left:20px;margin-bottom:8px}
-  .note{background:#fff;border:1px solid var(--creme-2);border-left:4px solid var(--or-clair);border-radius:12px;padding:14px 18px;margin:18px 0}
-  footer{background:var(--lavande-fonce);color:#CFC4E0;text-align:center;padding:24px 0;font-size:13px}
-  footer a{color:#E3D6F2;text-decoration:none}
+  html{scroll-behavior:smooth}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--encre);background:var(--cloud);line-height:1.65}
+  a{color:var(--teal-fonce)}
+  .wrap{max-width:820px;margin:0 auto;padding:0 22px}
+
+  header{position:sticky;top:0;z-index:20;background:rgba(245,247,250,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--cloud-2)}
+  header .wrap{display:flex;align-items:center;gap:12px;min-height:62px;flex-wrap:wrap;padding-top:9px;padding-bottom:9px}
+  header .home{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
+  header img{width:34px;height:34px;border-radius:9px}
+  header .brand{font-weight:800;font-size:18px;letter-spacing:.2px}
+  header .brand small{display:block;font-weight:600;font-size:10.5px;color:var(--muted);letter-spacing:.3px}
+  header nav{margin-left:auto;display:flex;gap:20px;font-size:14px;font-weight:600;flex-wrap:wrap}
+  header nav a{color:var(--muted);text-decoration:none;white-space:nowrap}
+  header nav a:hover,header nav a.active{color:var(--teal)}
+  @media(max-width:600px){header nav{width:100%;margin-left:0;gap:14px 18px;padding-top:2px}}
+
+  .hero{background:linear-gradient(160deg,var(--teal) 0%,var(--navy) 100%);color:#fff;text-align:center;padding:46px 0 50px}
+  .hero .eyebrow{color:var(--orange-clair);font-weight:800;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+  .hero h1{font-size:34px;font-weight:800;letter-spacing:-.5px;margin:8px 0}
+  @media(max-width:560px){.hero h1{font-size:27px}}
+
+  .legal{padding:40px 0 20px}
+  .legal h1{font-size:26px;color:var(--teal-fonce);margin:28px 0 6px}
+  .legal h2{font-size:19px;color:var(--teal-fonce);margin:22px 0 6px;border-bottom:2px solid var(--orange-clair);padding-bottom:4px}
+  .legal p{font-size:15px;margin-bottom:10px}
+  .legal em{color:var(--muted)}
+  code{background:var(--cloud-2);padding:1px 6px;border-radius:5px}
+
+  footer{background:var(--navy);color:#8DA2B5;text-align:center;padding:38px 0;font-size:13.5px;margin-top:30px}
+  footer a{color:var(--orange-clair);text-decoration:none}
 </style>
 </head>
 <body>
+
 <header>
   <div class="wrap">
-    <img src="assets/icon.png" alt="Bengacoon 360">
-    <span class="brand">Bengacoon 360 &amp; Cocoon</span>
-    <a href="index.html">← Accueil</a>
+    <a class="home" href="index.html">
+      <img src="assets/icon.png" alt="Bengacoon 360">
+      <span class="brand">Bengacoon 360 &middot; Cocoon<small>par Bengacoon</small></span>
+    </a>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="index.html#editions">&Eacute;ditions</a>
+      <a href="index.html#modules">Modules</a>
+      <a href="index.html#telechargement">T&eacute;l&eacute;chargement</a>
+      <a href="privacy.html" class="active">Confidentialit&eacute;</a>
+    </nav>
   </div>
 </header>
-<main>
+
+<div class="hero">
   <div class="wrap">
-    <h1>Politique de confidentialité</h1>
-    <p class="maj">Éditeur : Bengacoon — Julien Diallat · Contact : jdviallat@gmail.com · Mise à jour : août 2026</p>
-
-    <div class="note"><strong>En résumé :</strong> aucune donnée personnelle n'est collectée ni transmise. Tout reste sur votre appareil. Aucun compte, aucune publicité, aucun traceur. Cela vaut pour les deux éditions, <strong>Cocoon</strong> et <strong>Bengacoon&nbsp;360</strong>.</div>
-
-    <h2>Données traitées, uniquement en local</h2>
-    <p>Les informations suivantes sont enregistrées <strong>uniquement dans le stockage privé de votre appareil</strong> et ne sont jamais envoyées à un serveur :</p>
-    <ul>
-      <li>Votre profil global (identité, date et lieu de naissance) et vos réglages.</li>
-      <li><strong>Cocoon</strong> : les profils de vos proches, leurs rituels, cures et prises.</li>
-      <li><strong>Bengacoon 360</strong> : vos dossiers clients — coordonnées, animaux, rendez-vous, séances, chronologie, progression, comptes-rendus.</li>
-      <li>Vos mesures de santé (tension, glycémie, poids, IMC, température, SpO₂, fréquence cardiaque) et vos traitements.</li>
-      <li>Vos usages des modules : tirages, lectures de cadrans, bracelets, cures de fleurs, séances de souffle, séances de sport, journal transversal.</li>
-      <li>Votre agenda interne et vos rappels.</li>
-      <li>Un éventuel code à 6 chiffres de verrouillage, stocké de façon chiffrée (SecureStore).</li>
-    </ul>
-    <p>Vous pouvez supprimer ces données à tout moment depuis l'application, ou en la désinstallant.</p>
-
-    <h2>Données sensibles et données de tiers</h2>
-    <p>L'édition <strong>Bengacoon 360</strong> est destinée à des praticiens et peut contenir des données concernant vos clients. Ces données restent exclusivement sur votre appareil : l'éditeur n'y a jamais accès et n'en conserve aucune copie. En tant que praticien, vous en êtes le responsable de traitement au sens du RGPD — il vous appartient d'informer vos clients, de recueillir leur consentement lorsque c'est nécessaire, et de sécuriser votre appareil (verrouillage biométrique ou code, activé dans l'app).</p>
-
-    <h2>Import du carnet de contacts</h2>
-    <p>Si vous l'autorisez, l'application peut lire votre carnet de contacts <strong>pour pré-remplir une fiche client ou un profil de proche</strong>. La lecture se fait à la demande, sur l'appareil, et rien n'est transmis. Vous pouvez refuser l'autorisation : la saisie manuelle reste possible.</p>
-
-    <h2>Autorisations et leur usage</h2>
-    <ul>
-      <li><strong>Appareil photo / images</strong> : photos de profils, d'animaux, de produits ou d'ordonnances. Elles restent sur l'appareil.</li>
-      <li><strong>Contacts</strong> : uniquement pour l'import décrit ci-dessus, à votre demande.</li>
-      <li><strong>Notifications</strong> : rituel du jour, séance de souffle, bilan du soir, rappels de rendez-vous et alertes de prise — générés localement, sans serveur.</li>
-      <li><strong>Internet</strong> : uniquement pour vérifier l'existence d'une mise à jour au démarrage. Aucune donnée personnelle n'est transmise.</li>
-      <li><strong>Face ID / empreinte</strong> : uniquement pour déverrouiller l'app si vous l'activez ; gérée par le système, jamais lue par l'app.</li>
-    </ul>
-
-    <h2>Sauvegardes et exports</h2>
-    <p>Les sauvegardes JSON et les comptes-rendus PDF / Word / Excel sont générés sur l'appareil et enregistrés là où vous le décidez. Dès lors que vous les partagez (email, cloud, impression), leur protection ne dépend plus de l'application : traitez-les comme des documents confidentiels, en particulier s'ils contiennent des données de clients.</p>
-
-    <h2>Vos droits (RGPD / nLPD)</h2>
-    <p>Aucune donnée personnelle n'étant collectée par l'éditeur, il n'existe aucun traitement à distance vous concernant. Les données locales sont sous votre contrôle exclusif. Pour toute question : jdviallat@gmail.com.</p>
-
-    <h2>Avertissement</h2>
-    <p>Bengacoon 360 et Cocoon sont des applications de <strong>bien-être et d'accompagnement</strong>. Les approches proposées (lithothérapie, fleurs de Bach, radiesthésie, numérologie, oracle, communication animale) sont présentées comme des traditions de bien-être : elles n'établissent aucun diagnostic et ne remplacent jamais l'avis d'un professionnel de santé, humain ou vétérinaire. Le suivi des mesures de santé est un <strong>carnet personnel</strong>, et non un dispositif médical.</p>
+    <div class="eyebrow">Par Bengacoon</div>
+    <h1>Confidentialit&eacute;</h1>
   </div>
-</main>
-<footer>© 2026 Bengacoon · <a href="index.html">Bengacoon 360 &amp; Cocoon</a></footer>
+</div>
+
+<div class="wrap legal">
+
+  <h1>Politique de confidentialit&eacute;</h1>
+  <p><em>Derni&egrave;re mise &agrave; jour : septembre 2026 &middot; &Eacute;diteur : Bengacoon &middot; S&rsquo;applique aux deux &eacute;ditions : Bengacoon 360 et Cocoon</em></p>
+  <p>Bengacoon 360 et Cocoon (&laquo; l&rsquo;application &raquo;) sont con&ccedil;ues dans le respect total de votre vie priv&eacute;e et de celle de vos clients ou de vos proches.</p>
+
+  <h2>Aucune collecte de donn&eacute;es</h2>
+  <p>L&rsquo;application <strong>ne collecte, ne transmet et ne partage aucune donn&eacute;e personnelle</strong>. Elle ne n&eacute;cessite pas de cr&eacute;ation de compte et ne demande aucune connexion.</p>
+
+  <h2>Vos donn&eacute;es restent sur votre appareil</h2>
+  <p>Toutes les informations que vous saisissez (profils, dossiers clients ou fiches des proches, rendez-vous, s&eacute;ances, bilans, prises, mesures, humeur, journal) sont <strong>stock&eacute;es uniquement en local</strong>, sur votre appareil. Elles ne sont jamais envoy&eacute;es sur un serveur. Vous pouvez &agrave; tout moment les exporter (sauvegarde JSON, comptes-rendus PDF/Word/Excel), les importer, ou tout effacer depuis les r&eacute;glages de l&rsquo;application.</p>
+
+  <h2>Aucun traqueur, aucune publicit&eacute;</h2>
+  <p>L&rsquo;application ne contient <strong>aucun outil de suivi, d&rsquo;analyse ou de publicit&eacute;</strong> tiers, et aucune t&eacute;l&eacute;m&eacute;trie.</p>
+
+  <h2>Verrouillage &amp; biom&eacute;trie</h2>
+  <p>Le <strong>verrouillage par Face&nbsp;ID, empreinte ou code</strong> est trait&eacute; par le syst&egrave;me de votre appareil (stockage s&eacute;curis&eacute;)&nbsp;; l&rsquo;application ne re&ccedil;oit jamais vos donn&eacute;es biom&eacute;triques.</p>
+
+  <h2>Notifications</h2>
+  <p>Si vous les activez, les <strong>rappels</strong> (prises, rituel, bilan du soir, rendez-vous) sont g&eacute;n&eacute;r&eacute;s localement sur votre appareil (notifications locales), sans passer par un serveur.</p>
+
+  <h2>Carnet de contacts</h2>
+  <p>L&rsquo;import depuis le carnet de contacts est <strong>optionnel et ponctuel</strong>&nbsp;: il sert uniquement &agrave; cr&eacute;er des fiches clients ou proches dans l&rsquo;application, sur votre demande. Aucun contact n&rsquo;est lu en arri&egrave;re-plan ni transmis.</p>
+
+  <h2>Mises &agrave; jour</h2>
+  <p>Au d&eacute;marrage, l&rsquo;application peut consulter un simple fichier de version h&eacute;berg&eacute; en ligne pour vous proposer une mise &agrave; jour. Cette requ&ecirc;te ne transporte <strong>aucune donn&eacute;e personnelle</strong>.</p>
+
+  <h2>Donn&eacute;es de clients (&eacute;dition professionnelle)</h2>
+  <p>Avec Bengacoon 360, le praticien reste seul responsable des dossiers de ses clients, stock&eacute;s en local sur son appareil et prot&eacute;geables par verrouillage. L&rsquo;&eacute;diteur de l&rsquo;application n&rsquo;y a jamais acc&egrave;s.</p>
+
+  <h2>Enfants</h2>
+  <p>L&rsquo;application ne s&rsquo;adresse pas sp&eacute;cifiquement aux enfants et ne collecte aucune donn&eacute;e les concernant.</p>
+
+  <h2>Avertissement bien-&ecirc;tre</h2>
+  <p>Bengacoon 360 et Cocoon sont des applications de bien-&ecirc;tre. Elles enregistrent et organisent, n&rsquo;&eacute;tablissent aucun diagnostic, ne constituent pas un traitement et ne remplacent pas l&rsquo;avis d&rsquo;un professionnel de sant&eacute;.</p>
+
+  <h2>Contact</h2>
+  <p>Pour toute question : <code>contact@bengacoon.com</code></p>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <a href="index.html">&larr; Retour &agrave; l&rsquo;accueil</a> &nbsp;&middot;&nbsp; &copy; 2026 Bengacoon
+  </div>
+</footer>
+
 </body>
 </html>

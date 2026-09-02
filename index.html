@@ -3,199 +3,281 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bengacoon 360 & Cocoon — toute la gamme bien-être en une app</title>
-<meta name="description" content="Bengacoon 360 (thérapeutes) et Cocoon (familles) : une seule app, huit modules bien-être — oracle, radiesthésie, pierres, fleurs de Bach, numérologie, souffle, forme et santé — un profil unique et un suivi transversal.">
-<link rel="icon" href="assets/favicon.png">
-<meta property="og:title" content="Bengacoon 360 & Cocoon — toute la gamme bien-être en une app">
-<meta property="og:description" content="Huit modules, un profil unique, un rituel du jour corrélé à votre état. Deux éditions : Cocoon pour les familles, Bengacoon 360 pour les praticiens.">
-<meta property="og:image" content="https://jdviallat.github.io/bengacoon-360-site/assets/icon.png">
+<title>Bengacoon 360 &amp; Cocoon — toute la gamme bien-être en une application</title>
+<meta name="description" content="Bengacoon 360 (édition pro thérapeute) et Cocoon (édition famille) : les 8 applications bien-être Bengacoon réunies en une seule app. Un profil, un suivi, un accompagnement quotidien. En cours de développement.">
+<link rel="icon" href="assets/icon.png">
+<meta property="og:title" content="Bengacoon 360 &amp; Cocoon — une application, deux visages">
+<meta property="og:description" content="Les 8 univers bien-être Bengacoon réunis : pour votre famille avec Cocoon, pour votre cabinet avec Bengacoon 360.">
+<meta property="og:image" content="assets/icon.png">
 <style>
   :root{
-    --lavande:#6E5A8A; --lavande-clair:#B7A6D0; --sauge:#5E7355; --rose:#C36A72;
-    --or:#A9832F; --or-clair:#C9A24B;
-    --creme:#F6F2E9; --creme-2:#EFEAE0; --panel:#FFFFFF; --line:#E7E0D0;
-    --texte:#2A2A28; --muted:#6E6A60;
+    --teal:#2AA5BF; --teal-fonce:#1D7B90; --orange:#F39C12; --orange-clair:#F8C471;
+    --cloud:#F5F7FA; --cloud-2:#E8EDF3; --encre:#1A2233; --muted:#5D6B80;
+    --navy:#0B1326;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    color:var(--texte);background:var(--creme);line-height:1.6}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--encre); background:var(--cloud); line-height:1.6;
+  }
   a{color:inherit}
-  .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 22px}
 
-  header{position:sticky;top:0;z-index:20;background:rgba(246,242,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--creme-2)}
-  header .wrap{display:flex;align-items:center;gap:12px;height:64px}
-  header img{width:36px;height:36px;border-radius:9px}
-  header .brand{font-weight:800;font-size:18px;color:var(--lavande)}
-  header .brand small{display:block;font-weight:600;font-size:11px;color:var(--muted);letter-spacing:.3px}
-  header nav{margin-left:auto;display:flex;gap:22px;font-size:14px;font-weight:600}
-  header nav a{color:var(--muted);text-decoration:none}
-  header nav a:hover{color:var(--lavande)}
-  @media(max-width:640px){header nav{display:none}}
+  /* Header (identique sur toutes les pages) */
+  header{position:sticky;top:0;z-index:20;background:rgba(245,247,250,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--cloud-2)}
+  header .wrap{display:flex;align-items:center;gap:12px;min-height:62px;flex-wrap:wrap;padding-top:9px;padding-bottom:9px}
+  header .home{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
+  header img{width:34px;height:34px;border-radius:9px}
+  header .brand{font-weight:800;font-size:18px;letter-spacing:.2px}
+  header .brand small{display:block;font-weight:600;font-size:10.5px;color:var(--muted);letter-spacing:.3px}
+  header nav{margin-left:auto;display:flex;gap:20px;font-size:14px;font-weight:600;flex-wrap:wrap}
+  header nav a{color:var(--muted);text-decoration:none;white-space:nowrap}
+  header nav a:hover,header nav a.active{color:var(--teal)}
+  @media(max-width:600px){header nav{width:100%;margin-left:0;gap:14px 18px;padding-top:2px}}
 
-  .hero{background:linear-gradient(165deg,#F3EFF8 0%,#F6F2E9 55%,#EEF2EA 100%);text-align:center;padding:70px 0 78px;position:relative;overflow:hidden}
-  .hero .blob{position:absolute;opacity:.30;border-radius:50%;filter:blur(6px)}
-  .hero .b1{width:260px;height:260px;top:-90px;left:-70px;background:#DCD1EC}
-  .hero .b2{width:220px;height:220px;bottom:-90px;right:-60px;background:#D9E4D3}
-  .hero .b3{width:150px;height:150px;top:40px;right:12%;background:#F2DCDE}
-  .hero .logo{width:96px;height:96px;border-radius:24px;box-shadow:0 12px 32px rgba(110,90,138,.22);margin-bottom:20px;position:relative}
-  .hero .par{color:var(--or);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;position:relative}
-  .hero h1{font-size:42px;line-height:1.12;font-weight:800;letter-spacing:-.5px;position:relative;color:var(--lavande)}
-  .hero p.lead{max-width:660px;margin:16px auto 0;font-size:18px;color:#514D46;position:relative}
+  /* Bandeau statut */
+  .devband{background:var(--orange);color:#3a2703;text-align:center;font-weight:800;font-size:13.5px;padding:8px 16px;letter-spacing:.3px}
+
+  /* Hero */
+  .hero{background:linear-gradient(160deg,var(--teal) 0%,var(--navy) 100%);color:#fff;text-align:center;padding:70px 0 80px;position:relative;overflow:hidden}
+  .hero .halo{position:absolute;border-radius:50%;opacity:.09;background:var(--orange-clair)}
+  .hero .h1{width:260px;height:260px;top:-70px;left:-50px}
+  .hero .h2b{width:200px;height:200px;bottom:-60px;right:-40px}
+  .hero .logo{width:98px;height:98px;border-radius:24px;box-shadow:0 12px 34px rgba(0,0,0,.32);margin-bottom:22px;position:relative}
+  .hero h1{font-size:42px;line-height:1.12;font-weight:800;letter-spacing:-.5px;position:relative}
+  .hero .par{color:var(--orange-clair);font-weight:700;font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;position:relative}
+  .hero p.lead{max-width:640px;margin:18px auto 0;font-size:18px;color:#DCE9EF;position:relative}
+  .hero .soonpill{display:inline-block;margin-top:26px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:#fff;font-weight:700;font-size:14px;padding:9px 20px;border-radius:999px;position:relative}
   @media(max-width:640px){.hero h1{font-size:31px}.hero p.lead{font-size:16px}}
 
-  .editions{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:820px;margin:36px auto 0;position:relative}
-  @media(max-width:680px){.editions{grid-template-columns:1fr}}
-  .ed{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px 24px;text-align:left}
-  .ed.pro{border-color:#DCD1EC}
-  .ed .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
-    padding:4px 11px;border-radius:999px;margin-bottom:12px}
-  .ed.fam .tag{background:#E4EFDD;color:#3F5637}
-  .ed.pro .tag{background:#EDE5F6;color:#57446F}
-  .ed h3{font-size:22px;font-weight:800;margin-bottom:6px;color:var(--texte)}
-  .ed p{color:var(--muted);font-size:14.5px;margin-bottom:14px}
-  .ed ul{list-style:none;font-size:14px;color:#4A473F}
-  .ed li{padding:4px 0 4px 22px;position:relative}
-  .ed.fam li::before{content:"🌿";position:absolute;left:0;font-size:12px}
-  .ed.pro li::before{content:"💼";position:absolute;left:0;font-size:12px}
-  .ed .dl{display:inline-block;margin-top:16px;font-weight:800;font-size:14px;padding:11px 18px;border-radius:12px;
-    text-decoration:none;background:var(--creme-2);color:var(--muted);border:1px solid var(--line)}
+  .editions-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px;position:relative}
+  .edcta{display:inline-flex;flex-direction:column;align-items:flex-start;background:#fff;color:var(--encre);
+    padding:14px 24px;border-radius:14px;text-decoration:none;font-size:15px;font-weight:800;box-shadow:0 6px 18px rgba(0,0,0,.2);transition:transform .15s;text-align:left}
+  .edcta:hover{transform:translateY(-2px)}
+  .edcta small{font-weight:600;font-size:11.5px;color:var(--muted)}
+  .edcta.pro{border-left:5px solid var(--teal)}
+  .edcta.fam{border-left:5px solid var(--orange)}
 
-  section{padding:64px 0}
-  .eyebrow{color:var(--or);font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-align:center}
-  h2{font-size:30px;font-weight:800;text-align:center;margin:8px 0 8px;letter-spacing:-.3px;color:var(--lavande)}
-  .sub{text-align:center;color:var(--muted);max-width:680px;margin:0 auto 40px;font-size:16px}
+  /* Sections */
+  section{padding:64px 0;scroll-margin-top:100px}
+  .eyebrow{color:var(--orange);font-weight:800;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;text-align:center}
+  h2{font-size:30px;font-weight:800;text-align:center;margin:8px 0 8px;letter-spacing:-.3px}
+  .sub{text-align:center;color:var(--muted);max-width:660px;margin:0 auto 40px;font-size:16px}
 
-  .mods{background:var(--creme-2)}
-  .modgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  @media(max-width:900px){.modgrid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:520px){.modgrid{grid-template-columns:1fr}}
-  .mod{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px 18px;text-align:center;transition:transform .15s,box-shadow .15s}
-  .mod:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(110,90,138,.10)}
-  .mod img{width:52px;height:52px;border-radius:13px;margin-bottom:12px}
-  .mod h3{font-size:16px;font-weight:800;margin-bottom:5px;color:var(--texte)}
-  .mod p{color:var(--muted);font-size:13.5px;line-height:1.5}
+  /* Éditions jumelles */
+  .edition{border-radius:24px;padding:38px 34px;border:1px solid var(--cloud-2);background:#fff}
+  .edition + .edition{margin-top:26px}
+  .edition .tag{display:inline-block;font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:5px 14px;border-radius:999px;margin-bottom:12px}
+  .edition.fam .tag{background:#FDEBD0;color:#9A6108}
+  .edition.pro .tag{background:#D6EEF4;color:var(--teal-fonce)}
+  .edition h3{font-size:24px;font-weight:800;letter-spacing:-.3px;margin-bottom:6px}
+  .edition .pitch{color:var(--muted);font-size:15.5px;margin-bottom:20px;max-width:720px}
+  .needs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 22px}
+  @media(max-width:760px){.needs{grid-template-columns:1fr}}
+  .need{background:var(--cloud);border:1px solid var(--cloud-2);border-radius:14px;padding:16px 18px}
+  .need b{display:block;font-size:15px;margin-bottom:3px}
+  .edition.fam .need b{color:#B06E08}
+  .edition.pro .need b{color:var(--teal-fonce)}
+  .need p{font-size:13.8px;color:var(--muted)}
+  .roadmap{margin-top:20px;background:var(--cloud);border-left:4px solid var(--teal);border-radius:0 12px 12px 0;padding:14px 18px;font-size:14px;color:var(--muted)}
+  .roadmap b{color:var(--encre)}
 
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  @media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.grid{grid-template-columns:1fr}}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px 22px;transition:transform .15s,box-shadow .15s}
-  .card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(110,90,138,.10)}
-  .card .em{font-size:28px;display:inline-block;margin-bottom:11px}
-  .card h3{font-size:17px;font-weight:800;margin-bottom:7px;color:var(--texte)}
-  .card p{color:var(--muted);font-size:14.5px}
+  /* Modules */
+  .modsec{background:var(--cloud-2)}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:960px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.grid{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--cloud-2);border-radius:18px;padding:22px 20px;transition:transform .15s,box-shadow .15s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(42,165,191,.14)}
+  .card img{width:46px;height:46px;border-radius:12px;margin-bottom:12px;display:block}
+  .card h3{font-size:16.5px;font-weight:800;margin-bottom:6px;color:var(--teal-fonce)}
+  .card p{color:var(--muted);font-size:13.6px}
 
-  .privacy{background:var(--lavande);color:#F0EAF7;text-align:center}
-  .privacy h2{color:#fff}
-  .privacy .sub{color:#DDD2EC}
+  /* Tronc commun */
+  .commons{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:860px){.commons{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.commons{grid-template-columns:1fr}}
+  .common{background:#fff;border:1px solid var(--cloud-2);border-radius:16px;padding:20px 18px}
+  .common .dot{width:12px;height:12px;border-radius:50%;background:var(--orange);display:inline-block;margin-bottom:10px}
+  .common:nth-child(even) .dot{background:var(--teal)}
+  .common b{display:block;font-size:15px;margin-bottom:4px}
+  .common p{font-size:13.6px;color:var(--muted)}
 
-  footer{background:#4E4066;color:#CFC4E0;text-align:center;padding:38px 0;font-size:13.5px}
-  footer a{color:#E3D6F2;text-decoration:none}
-  footer .disc{max-width:700px;margin:16px auto 0;font-size:12px;color:#A99BC0;line-height:1.5}
+  /* Téléchargement */
+  .dl{background:var(--navy);color:#DCE9EF;text-align:center}
+  .dl h2{color:#fff}
+  .dl .sub{color:#9FB4C6}
+  .dl .box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;max-width:640px;margin:0 auto;padding:34px 30px}
+  .dl .soon{display:inline-block;background:var(--orange);color:#3a2703;font-weight:800;font-size:15px;padding:11px 26px;border-radius:999px;margin-bottom:16px}
+  .dl p{font-size:14.5px}
+  .dl .note{margin-top:14px;font-size:13px;color:#8DA2B5}
+
+  footer{background:var(--navy);color:#8DA2B5;text-align:center;padding:40px 0;font-size:13.5px;border-top:1px solid rgba(255,255,255,.08)}
+  footer a{color:var(--orange-clair);text-decoration:none}
+  footer .disc{max-width:660px;margin:16px auto 0;font-size:12px;color:#63788C;line-height:1.5}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <img src="assets/icon.png" alt="Bengacoon 360">
-    <div class="brand">Bengacoon 360<small>&amp; Cocoon — par Bengacoon</small></div>
+    <a class="home" href="index.html">
+      <img src="assets/icon.png" alt="Bengacoon 360">
+      <span class="brand">Bengacoon 360 &middot; Cocoon<small>par Bengacoon</small></span>
+    </a>
     <nav>
-      <a href="#editions">Éditions</a>
-      <a href="#modules">Les 8 modules</a>
-      <a href="#transversal">Le suivi</a>
-      <a href="privacy.html">Confidentialité</a>
+      <a href="index.html" class="active">Accueil</a>
+      <a href="#editions">&Eacute;ditions</a>
+      <a href="#modules">Modules</a>
+      <a href="#commun">Tronc commun</a>
+      <a href="#telechargement">T&eacute;l&eacute;chargement</a>
+      <a href="privacy.html">Confidentialit&eacute;</a>
     </nav>
   </div>
 </header>
 
+<div class="devband">En cours de d&eacute;veloppement &mdash; ce site pr&eacute;sente une application &agrave; venir</div>
+
 <div class="hero">
-  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  <span class="halo h1"></span><span class="halo h2b"></span>
   <div class="wrap">
     <img class="logo" src="assets/icon.png" alt="Bengacoon 360">
     <div class="par">par Bengacoon</div>
-    <h1>Toute la gamme bien-être,<br>dans une seule application</h1>
-    <p class="lead">Huit applications devenues huit modules, réunis autour d'un profil unique et d'un rituel du jour corrélé à votre état. Une même app, deux visages : <strong>Cocoon</strong> pour les familles, <strong>Bengacoon&nbsp;360</strong> pour les praticiens.</p>
-
-    <div class="editions" id="editions">
-      <div class="ed fam">
-        <span class="tag">Familles &amp; particuliers</span>
-        <h3>🌿 Cocoon</h3>
-        <p>Le foyer d'abord : les profils de vos proches, l'agenda de la maison, et le rituel du jour qui s'adapte à votre humeur.</p>
-        <ul>
-          <li>Ma famille + agenda du foyer</li>
-          <li>Rituels, cures et prises par personne</li>
-          <li>Rituel du jour corrélé à l'état émotionnel</li>
-          <li>Sauvegarde JSON complète</li>
-        </ul>
-        <span class="dl">Bientôt disponible</span>
-      </div>
-      <div class="ed pro">
-        <span class="tag">Thérapeutes &amp; praticiens</span>
-        <h3>💼 Bengacoon 360</h3>
-        <p>Le cabinet d'abord : dossiers clients, chronologie des séances, atelier multi-modalités et comptes-rendus prêts à remettre.</p>
-        <ul>
-          <li>Mes clients + agenda du cabinet</li>
-          <li>Dossiers : RDV, animaux, séances, progression</li>
-          <li>Atelier hypnose, PNL, communication animale, sophrologie, magnétisme</li>
-          <li>Comptes-rendus PDF / Word / Excel</li>
-        </ul>
-        <span class="dl">Bientôt disponible</span>
-      </div>
+    <h1>Une application,<br>deux visages</h1>
+    <p class="lead">Toute la gamme bien-&ecirc;tre Bengacoon &mdash; 8 applications devenues modules &mdash; r&eacute;unie dans une seule app&nbsp;: un profil unique, un suivi transversal, un accompagnement quotidien.</p>
+    <div class="editions-cta">
+      <a class="edcta fam" href="#cocoon"><small>Pour votre famille</small>Cocoon</a>
+      <a class="edcta pro" href="#pro"><small>Pour votre cabinet</small>Bengacoon&nbsp;360</a>
     </div>
+    <span class="soonpill">Disponible prochainement</span>
   </div>
 </div>
 
-<section id="modules" class="mods">
+<section id="editions">
   <div class="wrap">
-    <div class="eyebrow">Le contenu</div>
-    <h2>Huit modules, au niveau des apps dédiées</h2>
-    <p class="sub">Chaque module reprend fidèlement le contenu de l'application d'origine — pas une version allégée. Il a sa barre d'onglets, sa roue de réglages, et vous propose de « garder une trace » après chaque usage.</p>
-    <div class="modgrid">
-      <div class="mod"><img src="assets/modules/oracle-totems.png" alt=""><h3>Oraclecoon</h3><p>104 cartes-totems, tirages 1·2·3 cartes, 283 combinaisons interprétées, journal des tirages.</p></div>
-      <div class="mod"><img src="assets/modules/radiescoon.png" alt=""><h3>Radiescoon</h3><p>87 cadrans officiels, pendule animé, séances avant/après avec synthèse, guide du pendule.</p></div>
-      <div class="mod"><img src="assets/modules/lithotherapie.png" alt=""><h3>Lithocoon</h3><p>112 pierres illustrées, 18 bracelets préréglés + création sur mesure, questionnaire par besoin.</p></div>
-      <div class="mod"><img src="assets/modules/fleurs-de-bach.png" alt=""><h3>Flowercoon</h3><p>38 fleurs de Bach + 14 élixirs du monde, questionnaire → mélange, suivi de cure sur 21 jours.</p></div>
-      <div class="mod"><img src="assets/modules/numerologie.png" alt=""><h3>Numerocoon</h3><p>Thème complet, grille d'inclusion, dettes karmiques, horoscope, compatibilité 8 dimensions.</p></div>
-      <div class="mod"><img src="assets/modules/respicoon.png" alt=""><h3>Respicoon</h3><p>17 programmes de souffle, colibri animé, rythmes sur mesure, parcours &amp; badges.</p></div>
-      <div class="mod"><img src="assets/modules/fitcoon.png" alt=""><h3>Fitcoon</h3><p>26 programmes, 98 exercices détaillés, lecteur de séance guidé, records et suivi du poids.</p></div>
-      <div class="mod"><img src="assets/modules/lifecoon.png" alt=""><h3>Lifecoon</h3><p>7 types de mesures (tension, glycémie, poids, SpO₂…), courbes, traitements et rappels de prise.</p></div>
+    <div class="eyebrow">Deux &eacute;ditions, un m&ecirc;me c&oelig;ur</div>
+    <h2>Pens&eacute;e pour vos besoins, pas pour la technique</h2>
+    <p class="sub">Le m&ecirc;me code, deux applications distinctes&nbsp;: Cocoon accompagne le quotidien de la famille, Bengacoon 360 outille le praticien.</p>
+
+    <div class="edition fam" id="cocoon">
+      <span class="tag">🌿 Cocoon &mdash; pour votre famille</span>
+      <h3>Prendre soin des v&ocirc;tres, en un seul endroit</h3>
+      <p class="pitch">Un profil pour chaque proche, un agenda du foyer, et tous les outils bien-&ecirc;tre &agrave; port&eacute;e de main &mdash; sans jongler entre huit applications.</p>
+      <div class="needs">
+        <div class="need"><b>Toute la famille, un seul endroit</b><p>Des profils pour chacun de vos proches&nbsp;: rituels, cures, prises et humeur de tous, r&eacute;unis dans l&rsquo;agenda du foyer.</p></div>
+        <div class="need"><b>Ne plus jamais oublier une prise</b><p>M&eacute;dicaments, cures de fleurs de Bach, compl&eacute;ments&nbsp;: posologie, horaires, rappels et photos d&rsquo;ordonnances.</p></div>
+        <div class="need"><b>Instaurer des rituels quotidiens</b><p>Un rituel du jour corr&eacute;l&eacute; &agrave; l&rsquo;&eacute;tat &eacute;motionnel de chacun&nbsp;: respiration guid&eacute;e, moment de recentrage, bilan du soir.</p></div>
+        <div class="need"><b>Suivre l&rsquo;&eacute;volution de chacun</b><p>Courbes d&rsquo;humeur, journal transversal auto-aliment&eacute;, s&eacute;ries de jours et graphes d&rsquo;activit&eacute; sur 14 jours.</p></div>
+        <div class="need"><b>Tous les outils bien-&ecirc;tre r&eacute;unis</b><p>Pierres, fleurs de Bach, oracle, num&eacute;rologie, radiesth&eacute;sie, souffle, forme et sant&eacute;&nbsp;: huit univers dans une seule app.</p></div>
+        <div class="need"><b>Prot&eacute;ger l&rsquo;intimit&eacute; du foyer</b><p>Verrouillage Face&nbsp;ID, empreinte ou code&nbsp;; donn&eacute;es 100&nbsp;% locales, sans compte ni serveur.</p></div>
+      </div>
+    </div>
+
+    <div class="edition pro" id="pro">
+      <span class="tag">💼 Bengacoon 360 &mdash; pour votre cabinet</span>
+      <h3>Un dossier par client, tous les outils autour</h3>
+      <p class="pitch">Le compagnon du th&eacute;rapeute pluridisciplinaire&nbsp;: fini les doubles saisies, chaque outil travaille dans le m&ecirc;me dossier client.</p>
+      <div class="needs">
+        <div class="need"><b>Un seul dossier par client</b><p>Identit&eacute;, RDV, animaux, s&eacute;ances, chronologie et progression&nbsp;: chaque outil lit et enrichit le m&ecirc;me dossier &mdash; fini les doubles saisies.</p></div>
+        <div class="need"><b>Des s&eacute;ances multi-modalit&eacute;s</b><p>Hypnose, PNL, communication animale, sophrologie, magn&eacute;tisme&nbsp;&mdash; et tirage, pendule, pierres, fleurs ou nombres dans la m&ecirc;me s&eacute;ance.</p></div>
+        <div class="need"><b>Mesurer l&rsquo;effet de votre travail</b><p>Bilans avant/apr&egrave;s chaque s&eacute;ance, chronologie compl&egrave;te et courbes de progression du client.</p></div>
+        <div class="need"><b>Des comptes-rendus professionnels</b><p>Comptes-rendus de s&eacute;ance personnalisables, export&eacute;s en PDF, Word ou Excel directement depuis le dossier client.</p></div>
+        <div class="need"><b>D&eacute;marrer sans ressaisir</b><p>Import du carnet de contacts du t&eacute;l&eacute;phone pour cr&eacute;er les fiches clients, gestion des rendez-vous et des animaux.</p></div>
+        <div class="need"><b>Votre sph&egrave;re priv&eacute;e reste priv&eacute;e</b><p>Vos modules personnels (forme, num&eacute;rologie&hellip;) restent s&eacute;par&eacute;s des dossiers clients.</p></div>
+      </div>
+      <div class="roadmap"><b>Feuille de route&nbsp;:</b> la gestion compl&egrave;te du cabinet arrive &mdash; prestations, paiements et agenda synchronis&eacute;.</div>
     </div>
   </div>
 </section>
 
-<section id="transversal">
+<section id="modules" class="modsec">
   <div class="wrap">
-    <div class="eyebrow">Ce qui change tout</div>
-    <h2>Un profil, un suivi, une continuité</h2>
-    <p class="sub">Les modules ne sont pas juxtaposés : ils se parlent. Votre état du jour oriente le rituel, et chaque usage nourrit le suivi global.</p>
+    <div class="eyebrow">Le contenu des apps d&eacute;di&eacute;es</div>
+    <h2>Les 8 univers int&eacute;gr&eacute;s</h2>
+    <p class="sub">Chaque module reprend le contenu r&eacute;el de l&rsquo;application d&rsquo;origine, avec son accueil, ses r&eacute;glages et son suivi.</p>
     <div class="grid">
-      <div class="card"><span class="em">🏠</span><h3>Accueil vivant</h3><p>Famille ou clients d'abord, l'agenda, la phase de lune réelle (calcul astronomique), le message du jour et des blocs modules à action immédiate.</p></div>
-      <div class="card"><span class="em">👤</span><h3>Profil global</h3><p>Identité et naissance saisies une seule fois, reprises par tous les modules — le thème numérologique se calcule tout seul.</p></div>
-      <div class="card"><span class="em">📈</span><h3>Suivi transversal</h3><p>Graphes d'activité sur 14 jours, courbe d'humeur, statistiques par module et série de jours consécutifs.</p></div>
-      <div class="card"><span class="em">💊</span><h3>Mes prises</h3><p>Un moteur unique posologie / horaires / alertes / photos pour les médicaments, les cures de Bach et les compléments.</p></div>
-      <div class="card"><span class="em">📅</span><h3>Agenda unifié</h3><p>Rendez-vous clients ou famille et rappels au même endroit, avec import du carnet de contacts pour créer les fiches.</p></div>
-      <div class="card"><span class="em">🔐</span><h3>Verrouillage</h3><p>Face ID, empreinte ou code à 6 chiffres, avec re-verrouillage automatique dès que l'app passe en arrière-plan.</p></div>
-      <div class="card"><span class="em">📝</span><h3>Journal &amp; recherche</h3><p>Un journal transversal alimenté automatiquement et une recherche globale dans toutes les bibliothèques.</p></div>
-      <div class="card"><span class="em">💾</span><h3>Sauvegarde complète</h3><p>Export et import JSON de l'ensemble de vos données, en fusion ou en remplacement.</p></div>
-      <div class="card"><span class="em">🌍</span><h3>Contenu en 9 langues</h3><p>Français, anglais, allemand, italien, portugais, espagnol, suédois, norvégien, finnois.</p></div>
+      <div class="card">
+        <img src="assets/modules/oracle-totems.png" alt="Oraclecoon">
+        <h3>Oraclecoon</h3>
+        <p>104 cartes-totems (2 jeux officiels), tirages 1&middot;2&middot;3 cartes, 8 parcours guid&eacute;s th&eacute;matiques, 283 combinaisons interpr&eacute;t&eacute;es, journal des tirages.</p>
+      </div>
+      <div class="card">
+        <img src="assets/modules/radiescoon.png" alt="Radiescoon">
+        <h3>Radiescoon</h3>
+        <p>278 cadrans officiels, pendule anim&eacute;, lectures enregistr&eacute;es, s&eacute;ances avant/apr&egrave;s avec synth&egrave;se, guide du pendule, favoris.</p>
+      </div>
+      <div class="card">
+        <img src="assets/modules/lithotherapie.png" alt="Lithocoon">
+        <h3>Lithocoon</h3>
+        <p>112 pierres en photos r&eacute;elles (fiches d&eacute;taill&eacute;es), 18 bracelets pr&eacute;r&eacute;gl&eacute;s et cr&eacute;ation de bracelets, questionnaire par besoin, entretien des pierres.</p>
+      </div>
+      <div class="card">
+        <img src="assets/modules/fleurs-de-bach.png" alt="Flowercoon">
+        <h3>Flowercoon</h3>
+        <p>38 fleurs de Bach et 14 &eacute;lixirs du monde, questionnaire vers un m&eacute;lange personnalis&eacute;, suivi de cure sur 21 jours, correspondances chakras.</p>
+      </div>
+      <div class="card">
+        <img src="assets/modules/numerologie.png" alt="Numerocoon">
+        <h3>Numerocoon</h3>
+        <p>Th&egrave;me complet (chemin de vie, expression, &acirc;me&hellip;), grille d&rsquo;inclusion, dettes karmiques, horoscope jour/semaine, compatibilit&eacute; 8 dimensions, guidance.</p>
+      </div>
+      <div class="card">
+        <img src="assets/modules/respicoon.png" alt="Respicoon">
+        <h3>Respicoon</h3>
+        <p>17 programmes de souffle guid&eacute;s par le colibri anim&eacute;, cr&eacute;ateur de rythme sur mesure, ambiances, parcours, badges et s&eacute;rie de jours.</p>
+      </div>
+      <div class="card">
+        <img src="assets/modules/fitcoon.png" alt="Fitcoon">
+        <h3>Fitcoon</h3>
+        <p>26 programmes et 98 exercices en fiches compl&egrave;tes, lecteur de s&eacute;ance guid&eacute;, records (1RM), suivi du poids et de l&rsquo;IMC &mdash; votre espace perso.</p>
+      </div>
+      <div class="card">
+        <img src="assets/modules/lifecoon.png" alt="Lifecoon">
+        <h3>Lifecoon</h3>
+        <p>7 mesures (tension, glyc&eacute;mie, poids, IMC, temp&eacute;rature, SpO2, fr&eacute;quence cardiaque), courbes, traitements et rappels de prise, rendez-vous.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="privacy">
+<section id="commun">
   <div class="wrap">
-    <div class="eyebrow" style="color:#DDD2EC">Vos données, chez vous</div>
-    <h2>Hors ligne, et verrouillé</h2>
-    <p class="sub">Dossiers clients, séances, mesures de santé et notes restent sur votre appareil. Aucun compte à créer, aucune donnée transmise à un serveur. L'app se verrouille par biométrie ou code, et se re-verrouille dès qu'elle passe en arrière-plan.</p>
+    <div class="eyebrow">Le tronc commun</div>
+    <h2>Ce qui relie les 8 univers</h2>
+    <p class="sub">Un socle transversal partag&eacute; par les deux &eacute;ditions.</p>
+    <div class="commons">
+      <div class="common"><span class="dot"></span><b>Clients &amp; proches partag&eacute;s</b><p>Un profil global (identit&eacute;, naissance) repris par tous les modules&nbsp;: le th&egrave;me num&eacute;rologique se calcule tout seul.</p></div>
+      <div class="common"><span class="dot"></span><b>S&eacute;ances multi-modalit&eacute;s</b><p>Atelier de s&eacute;ance combinant les pratiques et les outils, avec bilan avant/apr&egrave;s pour alimenter le suivi.</p></div>
+      <div class="common"><span class="dot"></span><b>Mes prises</b><p>Un moteur unique posologie/horaires/alertes/photos pour m&eacute;dicaments, cures de Bach et compl&eacute;ments.</p></div>
+      <div class="common"><span class="dot"></span><b>Suivi &amp; journal</b><p>Graphes d&rsquo;activit&eacute; 14 jours, courbe d&rsquo;humeur, stats par module, journal transversal et recherche globale.</p></div>
+      <div class="common"><span class="dot"></span><b>Exports PDF, Word, Excel</b><p>Comptes-rendus personnalisables et sauvegarde/import JSON complet (fusion ou remplacement).</p></div>
+      <div class="common"><span class="dot"></span><b>Verrouillage &amp; vie priv&eacute;e</b><p>Face&nbsp;ID, empreinte ou code&nbsp;; re-verrouillage en arri&egrave;re-plan&nbsp;; donn&eacute;es 100&nbsp;% locales, aucune t&eacute;l&eacute;m&eacute;trie.</p></div>
+      <div class="common"><span class="dot"></span><b>Agenda unifi&eacute; &amp; rappels</b><p>RDV clients ou famille, rappels quotidiens (rituel, souffle, bilan du soir) et alertes de prise.</p></div>
+      <div class="common"><span class="dot"></span><b>Accueil vivant</b><p>Famille ou clients d&rsquo;abord, agenda, phase de lune r&eacute;elle, message du jour et modules &agrave; action imm&eacute;diate.</p></div>
+      <div class="common"><span class="dot"></span><b>9 langues &agrave; venir</b><p>Le contenu existe d&eacute;j&agrave; en 9 langues (fr, en, de, it, pt, es, sv, no, fi)&nbsp;; l&rsquo;interface est en fran&ccedil;ais pour l&rsquo;instant.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="telechargement" class="dl">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--orange-clair)">T&eacute;l&eacute;chargement</div>
+    <h2>Bient&ocirc;t sur vos appareils</h2>
+    <p class="sub">Deux applications distinctes issues du m&ecirc;me c&oelig;ur&nbsp;: Cocoon et Bengacoon 360.</p>
+    <div class="box">
+      <span class="soon">Disponible prochainement</span>
+      <p>L&rsquo;application est <strong>en cours de d&eacute;veloppement</strong>. Les liens de t&eacute;l&eacute;chargement (Android, puis iPhone) appara&icirc;tront ici d&egrave;s la publication de la premi&egrave;re version publique.</p>
+      <p class="note">Revenez bient&ocirc;t, ou &eacute;crivez-nous pour &ecirc;tre pr&eacute;venu&nbsp;: <a href="mailto:contact@bengacoon.com" style="color:var(--orange-clair)">contact@bengacoon.com</a></p>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <strong>Bengacoon 360</strong> &amp; <strong>Cocoon</strong> — par Bengacoon · Contenu en 9 langues<br>
-    <a href="privacy.html">Politique de confidentialité</a> &nbsp;·&nbsp; © 2026 Bengacoon
-    <p class="disc">Bengacoon 360 et Cocoon sont des applications de bien-être et d'accompagnement. Les approches proposées (lithothérapie, fleurs de Bach, radiesthésie, numérologie, oracle) sont présentées comme des traditions de bien-être : elles n'établissent aucun diagnostic, ne constituent pas un traitement et ne remplacent jamais l'avis d'un professionnel de santé. Les mesures de santé enregistrées sont un carnet de suivi personnel, pas un dispositif médical.</p>
+    <strong style="color:#DCE9EF">Bengacoon 360 &middot; Cocoon</strong> &mdash; par Bengacoon<br>
+    <a href="privacy.html">Politique de confidentialit&eacute;</a> &nbsp;&middot;&nbsp; &copy; 2026 Bengacoon
+    <p class="disc">Bengacoon 360 et Cocoon sont des applications de bien-&ecirc;tre. Elles enregistrent et organisent, n&rsquo;&eacute;tablissent aucun diagnostic, ne constituent pas un traitement et ne remplacent pas l&rsquo;avis d&rsquo;un professionnel de sant&eacute;.</p>
   </div>
 </footer>
 

@@ -1,0 +1,7 @@
+{
+  "version": "1.11.0",
+  "url": "https://github.com/jdviallat/bengacoon-360/releases/download/v1.11.0/Bengacoon-360-1.11.0.apk",
+  "notes": "Modules embarqués réels (écrans et moteurs des apps dédiées repris tels quels), passe d'intégrité des contenus et application allégée (~46 Mo).",
+  "mandatory": false,
+  "minVersion": "1.0.0"
+}
