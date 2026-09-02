@@ -64,3 +64,7 @@ Fil réel des releases (une entrée par version publiée, même numéro pour les
 - Première version : 8 modules bien-être réunis.
 - Deux éditions, un même cœur : Cocoon (famille) et Bengacoon 360 (pro).
 - État du jour relié au rituel proposé. Contenu i18n en 9 langues.
+
+## 1.12.0 — 2 septembre 2026
+- Oraclecoon à l'identique : 8 parcours guidés, quiz « Trouver mon animal », tirages relationnel et croix en 5, 6 thèmes, lecture vocale, statistiques et export PDF du journal, fiches complètes, 9 langues
+- Préparation multilingue de la coque et pont de langue vers les modules intégrés
