@@ -1,4 +1,4 @@
-# Changelog — Bengacoon 360 / Cocoon
+# Changelog — Bengacoon 360 / Zencoon
 
 Fil réel des releases (une entrée par version publiée, même numéro pour les deux éditions).
 
@@ -62,7 +62,7 @@ Fil réel des releases (une entrée par version publiée, même numéro pour les
 
 ## 1.0.0
 - Première version : 8 modules bien-être réunis.
-- Deux éditions, un même cœur : Cocoon (famille) et Bengacoon 360 (pro).
+- Deux éditions, un même cœur : Zencoon (famille) et Bengacoon 360 (pro).
 - État du jour relié au rituel proposé. Contenu i18n en 9 langues.
 
 ## 1.12.0 — 2 septembre 2026

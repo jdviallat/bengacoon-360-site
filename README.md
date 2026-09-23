@@ -1,7 +1,7 @@
-# Bengacoon 360 / Cocoon — site vitrine
+# Bengacoon 360 / Zencoon — site vitrine
 
 Site vitrine **public** des applications **Bengacoon 360** (édition pro thérapeute) et
-**Cocoon** (édition famille) — deux éditions construites sur le même code, par Bengacoon.
+**Zencoon** (édition famille) — deux éditions construites sur le même code, par Bengacoon.
 
 L'application est **en cours de développement** : le site présente le produit à venir,
 sans lien de téléchargement actif pour l'instant.

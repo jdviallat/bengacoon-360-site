@@ -1,4 +1,4 @@
-# Fonctionnalités — Bengacoon 360 / Cocoon
+# Fonctionnalités — Bengacoon 360 / Zencoon
 
 **Une application, deux visages.** Bengacoon 360 réunit toute la gamme bien-être Bengacoon
 (8 applications devenues modules) dans une seule app mobile : un profil unique, un suivi
@@ -6,7 +6,7 @@ transversal, un accompagnement quotidien. Deux **éditions** sont construites su
 
 ## Les deux éditions
 
-| | Cocoon | Bengacoon 360 |
+| | Zencoon | Bengacoon 360 |
 |---|---|---|
 | Public | Familles & particuliers | Thérapeutes / praticiens |
 | Accueil | **Ma famille** + agenda du foyer | **Mes clients** + agenda du cabinet |
@@ -14,7 +14,7 @@ transversal, un accompagnement quotidien. Deux **éditions** sont construites su
 | Séances | Rituel du jour corrélé à l'état émotionnel | Atelier multi-modalités : hypnose, PNL, communication animale, sophrologie, magnétisme + outils (tirage, pendule, pierres, fleurs, nombres) |
 | Exports | Sauvegarde JSON | + Comptes-rendus de séance **PDF / Word / Excel** personnalisables |
 
-### Cocoon — pour votre famille
+### Zencoon — pour votre famille
 
 - Prendre soin du bien-être de toute la famille en un seul endroit : profils des proches, agenda du foyer.
 - Ne plus oublier une prise : médicaments, cures de fleurs de Bach, compléments — posologie, horaires, rappels et photos d'ordonnances.
