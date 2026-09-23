@@ -127,6 +127,15 @@
   .bgc-contact .bgc-mail{display:inline-block;margin-top:18px;padding:13px 26px;border-radius:999px;font-weight:800;font-size:15.5px;text-decoration:none;background:var(--or,var(--gold,#C9A86A));color:#1B1B1B;border:1px solid rgba(0,0,0,.12)}
   .bgc-contact .bgc-mail:hover{filter:brightness(1.07)}
   .bgc-contact .bgc-addr{display:block;margin-top:11px;font-size:13px;opacity:.65}
+
+  .shots{background:#fff;border-top:1px solid var(--cloud-2);border-bottom:1px solid var(--cloud-2);padding:48px 0 52px}
+  .shots h2{text-align:center;margin:0 0 8px;font-size:clamp(20px,3vw,27px)}
+  .shots .sub{text-align:center;color:var(--muted);margin:0 auto 28px;max-width:56ch;font-size:15px}
+  .shots .inner{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;align-items:flex-start}
+  .shots figure{margin:0;text-align:center}
+  .shots img{width:190px;height:auto;border-radius:18px;border:1px solid var(--cloud-2);box-shadow:0 14px 34px rgba(26,34,51,.16);display:block}
+  .shots figcaption{margin-top:10px;font-size:12.5px;color:var(--muted);font-weight:600}
+  @media(max-width:640px){.shots img{width:140px}.shots .inner{gap:12px}}
 </style>
 </head>
 <body>
@@ -165,6 +174,18 @@
     <span class="soonpill">Disponible prochainement</span>
   </div>
 </div>
+
+
+<div class="shots"><div class="wrap">
+  <h2>L'application en images</h2>
+  <p class="sub">Captures de <strong>Zencoon 1.13.2</strong>, l'édition famille. Chaque module garde l'ambiance de son application d'origine.</p>
+  <div class="inner">
+      <figure><img src="assets/capture-1.png" alt="L'accueil du jour" loading="lazy" width="279" height="620"><figcaption>L'accueil du jour</figcaption></figure>
+      <figure><img src="assets/capture-2.png" alt="Les huit modules" loading="lazy" width="279" height="620"><figcaption>Les huit modules</figcaption></figure>
+      <figure><img src="assets/capture-3.png" alt="Le module Lithocoon" loading="lazy" width="279" height="620"><figcaption>Le module Lithocoon</figcaption></figure>
+      <figure><img src="assets/capture-4.png" alt="Le module Oraclecoon" loading="lazy" width="279" height="620"><figcaption>Le module Oraclecoon</figcaption></figure>
+  </div>
+</div></div>
 
 <section id="editions">
   <div class="wrap">
